@@ -38,6 +38,7 @@ monitorInterval ：检查配置文件是否有更新的间隔秒数,最小间隔
             <!--Appender Filter 控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）
             如果 ThresholdFilter 配置为 Level ERROR，并且 LogEvent 包含 Level DEBUG，则将返回 onMismatch值 -->
             <ThresholdFilter level="TRACE" onMatch="ACCEPT" onMismatch="DENY"/>
+            <!--traceId 通过MDC注入-->
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} %X{traceId} - %msg%n"/>
         </Console>
 
